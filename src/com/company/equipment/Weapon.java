@@ -1,6 +1,8 @@
 package com.company.equipment;
 
-public class Weapon {
+import com.company.Enum.Slot;
+
+public class Weapon extends Item {
     private enum WeaponType {
         AXE,
         BOW,
@@ -14,6 +16,17 @@ public class Weapon {
     private int damage;
     private double attackSpeed;
     private WeaponType weaponType;
+
+    public Weapon() {
+        super();
+    }
+
+    public Weapon(String name, int level, Slot slot, int damage, double attackSpeed, WeaponType weaponType) {
+        super(name, level, slot);
+        setDamage(damage);
+        setAttackSpeed(attackSpeed);
+        setWeaponType(weaponType);
+    }
 
     // Getters
     public int getDamage() {

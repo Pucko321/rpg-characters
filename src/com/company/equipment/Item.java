@@ -8,7 +8,6 @@ public abstract class Item {
     private Slot slot;
 
     public Item() {
-
     }
 
     public Item(String name, int level, Slot slot) {
