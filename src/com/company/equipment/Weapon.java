@@ -57,4 +57,13 @@ public class Weapon extends Item {
     public void setWeaponType(WeaponType weaponType) {
         this.weaponType = weaponType;
     }
+
+    // toString
+    @Override
+    public String toString() {
+        return  super.toString() +
+                ", Damage: " + damage +
+                ", Attack Speed: " + attackSpeed +
+                ", WeaponType: " + weaponType;
+    }
 }
