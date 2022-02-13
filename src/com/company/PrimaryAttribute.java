@@ -1,3 +1,5 @@
+package com.company;
+
 public class PrimaryAttribute {
     private int strength;
     private int dexterity;
