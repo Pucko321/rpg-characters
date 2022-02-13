@@ -41,4 +41,12 @@ public abstract class Armour extends Item {
     public void setArmourType(ArmourType armourType) {
         this.armourType = armourType;
     }
+
+    // toString
+    @Override
+    public String toString() {
+        return super.toString() +
+                attributes.toString() +
+                ", Armour Type: " + armourType;
+    }
 }
