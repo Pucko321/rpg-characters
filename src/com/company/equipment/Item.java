@@ -42,4 +42,11 @@ public abstract class Item {
     public void setSlot(Slot slot) {
         this.slot = slot;
     }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Name='" + name + '\'' +
+                ", Level=" + level;
+    }
 }
