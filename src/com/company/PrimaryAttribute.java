@@ -36,4 +36,13 @@ public class PrimaryAttribute {
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
     }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Attributes: " +
+                "- strength: " + strength +
+                "- dexterity=" + dexterity +
+                "- intelligence=" + intelligence;
+    }
 }
