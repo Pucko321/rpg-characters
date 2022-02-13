@@ -3,6 +3,11 @@ public class PrimaryAttribute {
     private int dexterity;
     private int intelligence;
 
+    public PrimaryAttribute(int strength, int dexterity, int intelligence) {
+        setStrength(strength);
+        setDexterity(dexterity);
+        setIntelligence(intelligence);
+    }
 
     // Getters
     public int getStrength() {
