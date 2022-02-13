@@ -7,9 +7,7 @@ public abstract class Item {
     private int level;
     private Slot slot;
 
-    public Item() {
-
-    }
+    public Item() {}
 
     public Item(String name, int level, Slot slot) {
         setName(name);
@@ -19,15 +17,15 @@ public abstract class Item {
 
     // Getters
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public int getLevel() {
-        return this.level;
+        return level;
     }
 
     public Slot getSlot() {
-        return this.slot;
+        return slot;
     }
 
     // Setters
@@ -46,7 +44,7 @@ public abstract class Item {
     // toString
     @Override
     public String toString() {
-        return "Name='" + name + '\'' +
-                ", Level=" + level;
+        return "Name: '" + name + '\'' +
+                ", Level: " + level;
     }
 }
