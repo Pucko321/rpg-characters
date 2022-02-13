@@ -1,8 +1,9 @@
 package com.company.equipment;
 
+import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
 
-public class Armour {
+public abstract class Armour extends Item {
     private enum ArmourType {
         CLOTH,
         LEATHER,
@@ -12,6 +13,16 @@ public class Armour {
 
     private PrimaryAttribute attributes;
     private ArmourType armourType;
+
+    public Armour() {
+        super();
+    }
+
+    public Armour(String name, int level, Slot slot, PrimaryAttribute attributes, ArmourType armourType) {
+        super(name, level, slot);
+        setAttributes(attributes);
+        setArmourType(armourType);
+    }
 
     // Getters
     public PrimaryAttribute getAttributes() {
