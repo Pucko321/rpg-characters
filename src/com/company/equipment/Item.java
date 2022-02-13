@@ -7,6 +7,16 @@ public class Item {
     private int level;
     private Slot slot;
 
+    public Item() {
+
+    }
+
+    public Item(String name, int level, Slot slot) {
+        setName(name);
+        setLevel(level);
+        setSlot(slot);
+    }
+
     // Getters
     public String getName() {
         return this.name;
