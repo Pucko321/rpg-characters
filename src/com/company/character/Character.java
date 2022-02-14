@@ -17,10 +17,10 @@ public abstract class Character {
 
     public Character() {
         // Default values constructor
-        level = 1;
+        setLevel(1);
 
         for (Slot slot: Slot.values()) {
-            equipment.put(slot, null);
+            this.equipment.put(slot, null);
         }
     }
 
@@ -88,7 +88,7 @@ public abstract class Character {
     }
 
     public void levelUp() {
-        this.level++;
+        setLevel(getLevel() + 1);
     }
 
     private void setAttributes(PrimaryAttribute attributes) {
