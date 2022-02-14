@@ -62,4 +62,25 @@ public class Character {
     public Item getWeaponSlot() {
         return getEquipment().get(Slot.WEAPON);
     }
+
+    // Setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    private void setAttributes(PrimaryAttribute attributes) {
+        this.attributes = attributes;
+    }
+
+    private void setPrimaryAttribute(String primaryAttribute) {
+        this.primaryAttribute = primaryAttribute;
+    }
+
+    public void setEquipment(HashMap<Slot, Item> equipment) {
+        this.equipment = equipment;
+    }
 }
