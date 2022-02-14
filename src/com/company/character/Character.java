@@ -2,6 +2,7 @@ package com.company.character;
 
 import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
+import com.company.equipment.Armour;
 import com.company.equipment.Item;
 import com.company.equipment.Weapon;
 
@@ -80,7 +81,7 @@ public class Character {
         this.primaryAttribute = primaryAttribute;
     }
 
-    public void setEquipment(HashMap<Slot, Item> equipment) {
-        this.equipment = equipment;
+    public void equipItem(Slot slot, Item item) {
+        this.equipment.put(slot, item);
     }
 }
