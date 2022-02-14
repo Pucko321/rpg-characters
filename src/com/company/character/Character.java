@@ -87,6 +87,10 @@ public abstract class Character {
         this.level = level;
     }
 
+    public void levelUp() {
+        this.level++;
+    }
+
     private void setAttributes(PrimaryAttribute attributes) {
         this.attributes = attributes;
     }
