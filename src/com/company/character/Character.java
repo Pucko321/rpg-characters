@@ -20,7 +20,7 @@ public abstract class Character {
         setLevel(1);
 
         for (Slot slot: Slot.values()) {
-            this.equipment.put(slot, null);
+            setEquipmentSlot(slot);
         }
     }
 
@@ -97,6 +97,10 @@ public abstract class Character {
 
     private void setPrimaryAttribute(String primaryAttribute) {
         this.primaryAttribute = primaryAttribute;
+    }
+
+    public void setEquipmentSlot(Slot slot) {
+        this.equipment.put(slot, null);
     }
 
     public void equipItem(Slot slot, Item item) {
