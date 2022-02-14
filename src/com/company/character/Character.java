@@ -87,7 +87,7 @@ public abstract class Character {
         this.level = level;
     }
 
-    public void levelUp() {
+    public void setLevelUp() {
         setLevel(getLevel() + 1);
     }
 
@@ -103,7 +103,7 @@ public abstract class Character {
         this.equipment.put(slot, null);
     }
 
-    public void equipItem(Slot slot, Item item) {
+    public void setEquipmentItem(Slot slot, Item item) {
         this.equipment.put(slot, item);
     }
 }
