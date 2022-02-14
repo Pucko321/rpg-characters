@@ -8,12 +8,26 @@ import com.company.equipment.Weapon;
 
 import java.util.HashMap;
 
-public class Character {
+public abstract class Character {
     private String name;
     private int level;
     private PrimaryAttribute attributes;
     private String primaryAttribute;
-    private HashMap<Slot, Item> equipment;
+    private final HashMap<Slot, Item> equipment = new HashMap<>();
+
+    public Character() {
+        // Default values constructor
+        level = 1;
+
+        for (Slot slot: Slot.values()) {
+            equipment.put(slot, null);
+        }
+    }
+
+    public Character(String name) {
+        this();
+        setName(name);
+    }
 
     // Getters
     public String getName() {
