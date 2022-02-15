@@ -110,4 +110,15 @@ public abstract class Character {
     public void equipItem(Slot slot, Item item) {
         this.equipment.put(slot, item);
     }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Character" +
+                "-----------" +
+                "name: " + name +
+                ", level: " + level +
+                attributes.toString() +
+                ", DPS: " + "TODO";
+    }
 }
