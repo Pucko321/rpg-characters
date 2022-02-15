@@ -37,12 +37,22 @@ public class PrimaryAttribute {
         this.intelligence = intelligence;
     }
 
+    // Methods
+    public void increaseAttributes(int strengthGain, int dexterityGain, int intelligenceGain) {
+        int newStrength = getStrength() + strengthGain;
+        int newDexterity = getDexterity() + dexterityGain;
+        int newIntelligence = getIntelligence() + intelligenceGain;
+        setStrength(newStrength);
+        setDexterity(newDexterity);
+        setIntelligence(newIntelligence);
+    }
+
     // toString
     @Override
     public String toString() {
         return "Attributes: " +
                 "- strength: " + strength +
-                "- dexterity=" + dexterity +
-                "- intelligence=" + intelligence;
+                "- dexterity: " + dexterity +
+                "- intelligence: " + intelligence;
     }
 }
