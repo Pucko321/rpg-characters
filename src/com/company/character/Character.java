@@ -16,6 +16,7 @@ public abstract class Character {
     private PrimaryAttribute attributes;
     private PrimaryAttributeType primaryAttribute;
     private final HashMap<Slot, Item> equipment = new HashMap<>();
+    private CharacterType characterType;
 
     public Character(CharacterType characterType) {
         // Default values constructor
@@ -88,6 +89,10 @@ public abstract class Character {
         return getEquipment().get(Slot.WEAPON);
     }
 
+    public CharacterType getCharacterType() {
+        return characterType;
+    }
+
     // Setters
     public void setName(String name) {
         this.name = name;
@@ -107,6 +112,10 @@ public abstract class Character {
 
     public void setEquipmentSlot(Slot slot) {
         this.equipment.put(slot, null);
+    }
+
+    public void setCharacterType(CharacterType characterType) {
+        this.characterType = characterType;
     }
 
     // Methods
