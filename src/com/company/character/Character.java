@@ -1,5 +1,6 @@
 package com.company.character;
 
+import com.company.Enum.CharacterType;
 import com.company.Enum.PrimaryAttributeType;
 import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
@@ -16,17 +17,25 @@ public abstract class Character {
     private PrimaryAttributeType primaryAttribute;
     private final HashMap<Slot, Item> equipment = new HashMap<>();
 
-    public Character() {
+    public Character(CharacterType characterType) {
         // Default values constructor
         setLevel(1);
 
         for (Slot slot: Slot.values()) {
             setEquipmentSlot(slot);
         }
+
+        setAttributes(new PrimaryAttribute(
+                characterType.defaultStrength,
+                characterType.defaultDexterity,
+                characterType.defaultIntelligence)
+        );
+
+        setPrimaryAttribute(characterType.primaryAttribute);
     }
 
-    public Character(String name) {
-        this();
+    public Character(String name, CharacterType characterType) {
+        this(characterType);
         setName(name);
     }
 
