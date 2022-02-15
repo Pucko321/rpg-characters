@@ -42,7 +42,7 @@ public class PrimaryAttribute {
     public String toString() {
         return "Attributes: " +
                 "- strength: " + strength +
-                "- dexterity=" + dexterity +
-                "- intelligence=" + intelligence;
+                "- dexterity: " + dexterity +
+                "- intelligence: " + intelligence;
     }
 }
