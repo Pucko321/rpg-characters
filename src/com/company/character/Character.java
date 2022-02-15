@@ -102,7 +102,10 @@ public abstract class Character {
     // Methods
     public void levelUp() {
         setLevel(getLevel() + 1);
+        increaseAttributes();
     }
+
+    public abstract void increaseAttributes();
 
     public void equipItem(Slot slot, Item item) {
         this.equipment.put(slot, item);
