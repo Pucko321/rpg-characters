@@ -37,6 +37,16 @@ public class PrimaryAttribute {
         this.intelligence = intelligence;
     }
 
+    // Methods
+    private void levelUp(int strengthGain, int dexterityGain, int intelligenceGain) {
+        int newStrength = getStrength() + strengthGain;
+        int newDexterity = getDexterity() + dexterityGain;
+        int newIntelligence = getIntelligence() + intelligenceGain;
+        setStrength(newStrength);
+        setDexterity(newDexterity);
+        setIntelligence(newIntelligence);
+    }
+
     // toString
     @Override
     public String toString() {
