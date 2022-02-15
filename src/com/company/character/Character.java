@@ -1,5 +1,6 @@
 package com.company.character;
 
+import com.company.Enum.PrimaryAttributeType;
 import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
 import com.company.equipment.Armour;
@@ -12,7 +13,7 @@ public abstract class Character {
     private String name;
     private int level;
     private PrimaryAttribute attributes;
-    private String primaryAttribute;
+    private PrimaryAttributeType primaryAttribute;
     private final HashMap<Slot, Item> equipment = new HashMap<>();
 
     public Character() {
@@ -54,7 +55,7 @@ public abstract class Character {
         return getAttributes().getIntelligence();
     }
 
-    public String getPrimaryAttribute() {
+    public PrimaryAttributeType getPrimaryAttribute() {
         return primaryAttribute;
     }
 
@@ -91,7 +92,7 @@ public abstract class Character {
         this.attributes = attributes;
     }
 
-    private void setPrimaryAttribute(String primaryAttribute) {
+    private void setPrimaryAttribute(PrimaryAttributeType primaryAttribute) {
         this.primaryAttribute = primaryAttribute;
     }
 
