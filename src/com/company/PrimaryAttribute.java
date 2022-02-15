@@ -38,7 +38,7 @@ public class PrimaryAttribute {
     }
 
     // Methods
-    private void levelUp(int strengthGain, int dexterityGain, int intelligenceGain) {
+    public void increaseAttributes(int strengthGain, int dexterityGain, int intelligenceGain) {
         int newStrength = getStrength() + strengthGain;
         int newDexterity = getDexterity() + dexterityGain;
         int newIntelligence = getIntelligence() + intelligenceGain;
