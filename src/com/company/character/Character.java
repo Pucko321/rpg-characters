@@ -33,6 +33,8 @@ public abstract class Character {
         );
 
         setPrimaryAttribute(characterType.primaryAttribute);
+
+        setCharacterType(characterType);
     }
 
     public Character(String name, CharacterType characterType) {
