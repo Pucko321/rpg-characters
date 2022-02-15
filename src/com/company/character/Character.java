@@ -126,7 +126,12 @@ public abstract class Character {
         increaseAttributes();
     }
 
-    public abstract void increaseAttributes();
+    private void increaseAttributes() {
+        int strengthGain = getCharacterType().strengthGain;
+        int dexterityGain = getCharacterType().dexterityGain;
+        int intelligenceGain = getCharacterType().intelligenceGain;
+        getAttributes().increaseAttributes(strengthGain, dexterityGain, intelligenceGain);
+    }
 
     public void equipItem(Slot slot, Item item) {
         this.equipment.put(slot, item);
