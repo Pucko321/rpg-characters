@@ -87,10 +87,6 @@ public abstract class Character {
         this.level = level;
     }
 
-    public void setLevelUp() {
-        setLevel(getLevel() + 1);
-    }
-
     private void setAttributes(PrimaryAttribute attributes) {
         this.attributes = attributes;
     }
@@ -103,7 +99,12 @@ public abstract class Character {
         this.equipment.put(slot, null);
     }
 
-    public void setEquipmentItem(Slot slot, Item item) {
+    // Methods
+    public void levelUp() {
+        setLevel(getLevel() + 1);
+    }
+
+    public void equipItem(Slot slot, Item item) {
         this.equipment.put(slot, item);
     }
 }
