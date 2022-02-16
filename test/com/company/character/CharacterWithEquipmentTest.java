@@ -4,9 +4,12 @@ import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
 import com.company.equipment.Armour;
 import com.company.equipment.Weapon;
+import com.company.exception.InvalidWeaponException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CharacterWithEquipmentTest {
     Weapon testWeapon;
@@ -53,6 +56,13 @@ class CharacterWithEquipmentTest {
     @Test
     void toHighWeaponLevel_ValidValue_ShouldThrowInvalidWeaponException() {
         testWeapon.setLevel(2);
-        testWarrior.equipItem(Slot.WEAPON, testWeapon);
+        Exception exception = assertThrows(InvalidWeaponException.class, () -> {
+            testWarrior.equipItem(Slot.WEAPON, testWeapon);
+        });
+
+        String expectedMessage = "You must have a level of 2 to wield this weapon.";
+        String actualMessage = exception.getMessage();
+
+        Assertions.assertEquals(expectedMessage, actualMessage);
     }
 }
