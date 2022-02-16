@@ -33,4 +33,11 @@ class WeaponTest {
 
         Assertions.assertEquals(originalName, result);
     }
+
+    @Test
+    void getLevel_ValidValue_ShouldPass() {
+        int result = testWeapon.getLevel();
+
+        Assertions.assertEquals(originalLevel, result);
+    }
 }
