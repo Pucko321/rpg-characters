@@ -7,6 +7,7 @@ import com.company.PrimaryAttribute;
 import com.company.equipment.Armour;
 import com.company.equipment.Item;
 import com.company.equipment.Weapon;
+import com.company.exception.InvalidArmourException;
 import com.company.exception.InvalidWeaponException;
 
 import java.util.HashMap;
@@ -134,11 +135,16 @@ public abstract class Character {
         getAttributes().increaseAttributes(strengthGain, dexterityGain, intelligenceGain);
     }
 
-    public void equipItem(Slot slot, Item item) throws InvalidWeaponException {
+    public void equipItem(Slot slot, Item item) throws InvalidWeaponException, InvalidArmourException {
         // If the characters level is lower than the item requirement -> throw an invalid weapon exception
         if (getLevel() < item.getLevel()) {
-            String itemType = item instanceof Weapon ? "weapon" : "armour";
-            throw new InvalidWeaponException("You must have a level of " + item.getLevel() + " to wield this " + itemType + ".");
+            if (item instanceof Weapon) {
+                throw new InvalidWeaponException("You must have a level of " + item.getLevel() + " to wield this weapon.");
+            }
+            else {
+                throw new InvalidArmourException("You must have a level of " + item.getLevel() + " to wield this armour.");
+            }
+
         }
         else {
             this.equipment.put(slot, item);
