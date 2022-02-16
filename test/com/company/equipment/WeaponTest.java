@@ -40,4 +40,11 @@ class WeaponTest {
 
         Assertions.assertEquals(originalLevel, result);
     }
+
+    @Test
+    void getSlot_ValidValue_ShouldPass() {
+        Slot result = testWeapon.getSlot();
+
+        Assertions.assertEquals(originalSlot, result);
+    }
 }
