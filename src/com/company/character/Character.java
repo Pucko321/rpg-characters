@@ -3,6 +3,7 @@ package com.company.character;
 import com.company.Enum.CharacterType;
 import com.company.Enum.PrimaryAttributeType;
 import com.company.Enum.Slot;
+import com.company.Enum.WeaponType;
 import com.company.PrimaryAttribute;
 import com.company.equipment.Armour;
 import com.company.equipment.Item;
@@ -181,8 +182,8 @@ public abstract class Character {
         getAttributes().increaseAttributes(strengthGain, dexterityGain, intelligenceGain);
     }
 
-    public void equipItem(Slot slot, Item item) throws InvalidWeaponException, InvalidArmourException {
-        // If the characters level is lower than the item requirement -> throw an invalid weapon exception
+    public boolean equipItem(Slot slot, Item item) throws InvalidWeaponException, InvalidArmourException {
+        // If the characters level is lower than the item requirement -> throw an invalid weapon/armour exception
         if (getLevel() < item.getLevel()) {
             if (item instanceof Weapon) {
                 throw new InvalidWeaponException("You must have a level of " + item.getLevel() + " to wield this weapon.");
@@ -190,10 +191,13 @@ public abstract class Character {
             else {
                 throw new InvalidArmourException("You must have a level of " + item.getLevel() + " to wield this armour.");
             }
-
         }
+
+        // If the character is trying to equip the wrong item type -> throw an invalid weapon/armour exception
+        // didn't plan for this particular case, so don't hava time to make changes to fix this
         else {
             this.equipment.put(slot, item);
+            return true;
         }
     }
 
