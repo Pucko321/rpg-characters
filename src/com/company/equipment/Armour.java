@@ -4,7 +4,7 @@ import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
 
 public class Armour extends Item {
-    private enum ArmourType {
+    public enum ArmourType {
         CLOTH,
         LEATHER,
         MAIL,
