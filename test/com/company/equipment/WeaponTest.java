@@ -47,4 +47,11 @@ class WeaponTest {
 
         Assertions.assertEquals(originalSlot, result);
     }
+
+    @Test
+    void getDamage_ValidValue_ShouldPass() {
+        int result = testWeapon.getDamage();
+
+        Assertions.assertEquals(originalDamage, result);
+    }
 }
