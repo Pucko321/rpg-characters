@@ -134,6 +134,15 @@ public abstract class Character {
         return getBasePrimaryAttribute() + getArmourAttributes();
     }
 
+    public double getDPS() {
+        double weaponDPS = 1.0;
+        if (getWeaponSlot() != null) {
+            weaponDPS = ((Weapon)getWeaponSlot()).getDPS();
+        }
+
+        return weaponDPS * (1 + getTotalPrimaryAttribute() / 100);
+    }
+
     // Setters
     public void setName(String name) {
         this.name = name;
