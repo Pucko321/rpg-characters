@@ -54,4 +54,11 @@ class WeaponTest {
 
         Assertions.assertEquals(originalDamage, result);
     }
+
+    @Test
+    void getAttackSpeed_ValidValue_ShouldPass() {
+        double result = testWeapon.getAttackSpeed();
+
+        Assertions.assertEquals(originalAttackSpeed, result);
+    }
 }
