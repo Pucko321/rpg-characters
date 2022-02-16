@@ -3,7 +3,7 @@ package com.company.equipment;
 import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
 
-public abstract class Armour extends Item {
+public class Armour extends Item {
     private enum ArmourType {
         CLOTH,
         LEATHER,
