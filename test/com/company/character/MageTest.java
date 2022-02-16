@@ -22,4 +22,15 @@ class MageTest {
 
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    void correctLevelUp_ValidValue_ShouldPass() {
+        int expected = 2;
+
+        testMage.levelUp();
+
+        int result = testMage.getLevel();
+
+        Assertions.assertEquals(expected, result);
+    }
 }
