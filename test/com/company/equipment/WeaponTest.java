@@ -29,7 +29,8 @@ class WeaponTest {
 
     @Test
     void getName_ValidValue_ShouldPass() {
-        String name = "Test Name";
+        String result = testWeapon.getName();
 
+        Assertions.assertEquals(originalName, result);
     }
 }
