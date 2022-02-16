@@ -87,4 +87,19 @@ class CharacterWithEquipmentTest {
 
         Assertions.assertEquals(expectedDPS, actualDPS);
     }
+
+    @Test
+    void getDPSWithWeapon_ValidValue_ShouldPass() {
+        double expectedDPS = (7 * 1.1) * (1 + (5.0 / 100));
+
+        try {
+            testWarrior.equipItem(Slot.WEAPON, testWeapon);
+        } catch (InvalidWeaponException | InvalidArmourException e) {
+            e.printStackTrace();
+        }
+
+        double actualDPS = testWarrior.getDPS();
+
+        Assertions.assertEquals(expectedDPS, actualDPS);
+    }
 }
