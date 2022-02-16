@@ -110,6 +110,26 @@ public abstract class Character {
         }
     }
 
+    public int getArmourAttributes() {
+        int headAttribute = 0;
+        int bodyAttribute = 0;
+        int legsAttribute = 0;
+
+        if (getHeadSlot() != null) {
+            headAttribute = ((Armour)getHeadSlot()).getAttributes().getPrimaryAttribute(getPrimaryAttribute());
+        }
+
+        if (getBodySlot() != null) {
+            bodyAttribute = ((Armour)getBodySlot()).getAttributes().getPrimaryAttribute(getPrimaryAttribute());
+        }
+
+        if (getLegsSlot() != null) {
+            legsAttribute = ((Armour)getLegsSlot()).getAttributes().getPrimaryAttribute(getPrimaryAttribute());
+        }
+
+        return headAttribute + bodyAttribute + legsAttribute;
+    }
+
 
 
     // Setters
