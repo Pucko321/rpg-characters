@@ -82,6 +82,9 @@ class CharacterWithEquipmentTest {
 
     @Test
     void getDPSNoWeapon_ValidValue_ShouldPass() {
+        double expectedDPS = 1 * (1 + (5.0 / 100));
+        double actualDPS = testWarrior.getDPS();
 
+        Assertions.assertEquals(expectedDPS, actualDPS);
     }
 }
