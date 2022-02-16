@@ -2,8 +2,8 @@ package com.company.equipment;
 
 import com.company.Enum.Slot;
 
-public abstract class Weapon extends Item {
-    private enum WeaponType {
+public class Weapon extends Item {
+    public enum WeaponType {
         AXE,
         BOW,
         DAGGER,
