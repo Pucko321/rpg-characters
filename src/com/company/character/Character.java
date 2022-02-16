@@ -130,7 +130,7 @@ public abstract class Character {
         return headAttribute + bodyAttribute + legsAttribute;
     }
 
-    public double getTotalPrimaryAttribute() {
+    public int getTotalPrimaryAttribute() {
         return getBasePrimaryAttribute() + getArmourAttributes();
     }
 
@@ -140,7 +140,7 @@ public abstract class Character {
             weaponDPS = ((Weapon)getWeaponSlot()).getDPS();
         }
 
-        return weaponDPS * (1 + getTotalPrimaryAttribute() / 100);
+        return weaponDPS * (1 + getTotalPrimaryAttribute() / 100.0);
     }
 
     // Setters

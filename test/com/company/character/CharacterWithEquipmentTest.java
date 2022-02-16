@@ -82,7 +82,7 @@ class CharacterWithEquipmentTest {
 
     @Test
     void getDPSNoWeapon_ValidValue_ShouldPass() {
-        double expectedDPS = 1 * (1 + (5.0 / 100));
+        double expectedDPS = 1 * (1 + (5 / 100.0));
         double actualDPS = testWarrior.getDPS();
 
         Assertions.assertEquals(expectedDPS, actualDPS);
@@ -90,7 +90,7 @@ class CharacterWithEquipmentTest {
 
     @Test
     void getDPSWithWeapon_ValidValue_ShouldPass() {
-        double expectedDPS = (7 * 1.1) * (1 + (5.0 / 100));
+        double expectedDPS = (7 * 1.1) * (1 + (5 / 100.0));
 
         try {
             testWarrior.equipItem(Slot.WEAPON, testWeapon);
@@ -102,4 +102,6 @@ class CharacterWithEquipmentTest {
 
         Assertions.assertEquals(expectedDPS, actualDPS);
     }
+
+
 }
