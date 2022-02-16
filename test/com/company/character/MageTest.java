@@ -45,6 +45,22 @@ class MageTest {
         int dexterityResult = testMage.getDexterity();
         int intelligenceResult = testMage.getIntelligence();
 
+        Assertions.assertEquals(expectedStrength, strengthResult);
+        Assertions.assertEquals(expectedDexterity, dexterityResult);
+        Assertions.assertEquals(expectedIntelligence, intelligenceResult);
+    }
+
+    @Test
+    void correctAttributesWhenLevelUp_ValidValue_ShouldPass() {
+        int expectedStrength = 2;
+        int expectedDexterity = 2;
+        int expectedIntelligence = 13;
+
+        testMage.levelUp();
+
+        int strengthResult = testMage.getStrength();
+        int dexterityResult = testMage.getDexterity();
+        int intelligenceResult = testMage.getIntelligence();
 
         Assertions.assertEquals(expectedStrength, strengthResult);
         Assertions.assertEquals(expectedDexterity, dexterityResult);
