@@ -20,8 +20,8 @@ class WeaponTest {
         double attackSpeed = 2.0;
         double expected = 20.0;
 
-        testWeapon.setDamage(10);
-        testWeapon.setAttackSpeed(2.0);
+        testWeapon.setDamage(damage);
+        testWeapon.setAttackSpeed(attackSpeed);
 
         double result = testWeapon.getDPS();
         Assertions.assertEquals(expected, result);
