@@ -50,9 +50,9 @@ class CharacterWithEquipmentTest {
         testWarrior = new Warrior();
     }
 
-    /*@Test
-    void toHighWeaponLevel_ValidValue_ShouldThrowError() {
+    @Test
+    void toHighWeaponLevel_ValidValue_ShouldThrowInvalidWeaponException() {
         testWeapon.setLevel(2);
-        Assertions.assertEquals(1, 1);
-    }*/
+        testWarrior.equipItem(Slot.WEAPON, testWeapon);
+    }
 }
