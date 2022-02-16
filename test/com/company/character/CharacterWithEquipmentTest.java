@@ -4,6 +4,7 @@ import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
 import com.company.equipment.Armour;
 import com.company.equipment.Weapon;
+import com.company.exception.InvalidArmourException;
 import com.company.exception.InvalidWeaponException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -69,7 +70,7 @@ class CharacterWithEquipmentTest {
     @Test
     void toHighArmourLevel_ValidValue_ShouldThrowInvalidWeaponException() {
         testPlateBody.setLevel(2);
-        Exception exception = assertThrows(InvalidWeaponException.class, () -> {
+        InvalidArmourException exception = assertThrows(InvalidArmourException.class, () -> {
             testWarrior.equipItem(Slot.WEAPON, testPlateBody);
         });
 
