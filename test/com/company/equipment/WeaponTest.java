@@ -69,4 +69,6 @@ class WeaponTest {
 
         Assertions.assertEquals(originalWeaponType, result);
     }
+
+    // Setters are tested in CharacterEquipWeaponTest
 }
