@@ -19,14 +19,7 @@ class WeaponTest {
         testWeapon = new Weapon(originalName, originalLevel, originalSlot, originalDamage, originalAttackSpeed, originalWeaponType);
     }
 
-    @Test
-    void getDPS_ValidValue_ShouldPass() {
-        double expected = 20.0;
-        double result = testWeapon.getDPS();
-
-        Assertions.assertEquals(expected, result);
-    }
-
+    // Getters
     @Test
     void getName_ValidValue_ShouldPass() {
         String result = testWeapon.getName();
@@ -60,5 +53,20 @@ class WeaponTest {
         double result = testWeapon.getAttackSpeed();
 
         Assertions.assertEquals(originalAttackSpeed, result);
+    }
+
+    @Test
+    void getDPS_ValidValue_ShouldPass() {
+        double expected = 20.0;
+        double result = testWeapon.getDPS();
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void getWeaponType_ValidValue_ShouldPass() {
+        Weapon.WeaponType result = testWeapon.getWeaponType();
+
+        Assertions.assertEquals(originalWeaponType, result);
     }
 }
