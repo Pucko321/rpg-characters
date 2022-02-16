@@ -32,8 +32,4 @@ class PrimaryAttributeTest {
         Assertions.assertEquals(attributes.getDexterity(), expectedDexterity);
         Assertions.assertEquals(attributes.getIntelligence(), expectedIntelligence);
     }
-
-    @Test
-    void testToString() {
-    }
 }
