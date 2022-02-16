@@ -30,5 +30,8 @@ class ArmourTest {
 
     @Test
     void getArmourType() {
+        Armour.ArmourType result = testArmour.getArmourType();
+
+        Assertions.assertEquals(originalArmourType, result);
     }
 }
