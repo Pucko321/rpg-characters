@@ -25,7 +25,7 @@ class MageTest {
     }
 
     @Test
-    void correctLevelUp_ValidValue_ShouldPass() {
+    void correctLevelWhenLevelUp_ValidValue_ShouldPass() {
         int expected = 2;
 
         testMage.levelUp();
