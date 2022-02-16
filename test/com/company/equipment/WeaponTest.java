@@ -1,5 +1,6 @@
 package com.company.equipment;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,15 +15,16 @@ class WeaponTest {
     }
 
     @Test
-    void getDPS() {
-    }
+    void getDPS_ValidValue_ShouldPass() {
+        int damage = 10;
+        double attackSpeed = 2.0;
+        double expected = 20.0;
 
-    @Test
-    void setDamage() {
-    }
+        testWeapon.setDamage(10);
+        testWeapon.setAttackSpeed(2.0);
 
-    @Test
-    void setAttackSpeed() {
+        double result = testWeapon.getDPS();
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
