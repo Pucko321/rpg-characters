@@ -118,4 +118,12 @@ class CharacterWithEquipmentTest {
 
         Assertions.assertEquals(expectedDPS, actualDPS);
     }
+
+    @Test
+    void returnTrueWhenEquippingValidWeapon_ValidValue_ShouldPass() throws InvalidWeaponException, InvalidArmourException {
+        boolean expectedResult = true;
+        boolean actualResult = testWarrior.equipItem(Slot.WEAPON, testWeapon);
+
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
 }
