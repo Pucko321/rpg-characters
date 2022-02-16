@@ -79,4 +79,9 @@ class CharacterWithEquipmentTest {
 
         Assertions.assertEquals(expectedMessage, actualMessage);
     }
+
+    @Test
+    void getDPSNoWeapon_ValidValue_ShouldPass() {
+
+    }
 }

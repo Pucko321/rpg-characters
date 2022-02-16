@@ -130,7 +130,9 @@ public abstract class Character {
         return headAttribute + bodyAttribute + legsAttribute;
     }
 
-
+    public double getTotalPrimaryAttribute() {
+        return getBasePrimaryAttribute() + getArmourAttributes();
+    }
 
     // Setters
     public void setName(String name) {
