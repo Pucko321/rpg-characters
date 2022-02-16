@@ -35,5 +35,5 @@ class ArmourTest {
         Assertions.assertEquals(originalArmourType, result);
     }
 
-    // Setters will be tested in CharacterEquipArmourTest
+    // Setters get tested in CharacterWithEquipmentTest
 }
