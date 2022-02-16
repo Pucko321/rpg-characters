@@ -1,14 +1,14 @@
-# Assignment 1 RPG-Characters
+# Assignment 5 RPG-Characters
 Java BE course assignment
 
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-Trivia game application built using Vue 3 + Vite
+RPG-Character application built using Java
 
 ## Table of Contents
 
-- [Assignment 1: RPG-Characters](#assignment-1-rpg-characters)
+- [Assignment 5: RPG-Characters](#assignment-5-rpg-characters)
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
   - [Usage](#usage)
