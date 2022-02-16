@@ -3,7 +3,7 @@ package com.company.equipment;
 import com.company.Enum.Slot;
 
 public class Weapon extends Item {
-    private enum WeaponType {
+    public enum WeaponType {
         AXE,
         BOW,
         DAGGER,

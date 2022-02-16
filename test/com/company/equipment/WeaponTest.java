@@ -1,33 +1,35 @@
 package com.company.equipment;
 
+import com.company.Enum.Slot;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class WeaponTest {
     Weapon testWeapon;
+    String originalName = "Test Name";
+    int originalLevel = 1;
+    Slot originalSlot = Slot.WEAPON;
+    int originalDamage = 10;
+    double originalAttackSpeed = 2.0;
+    Weapon.WeaponType originalWeaponType = Weapon.WeaponType.STAFF;
 
     @BeforeEach
     void setUp() {
-        testWeapon = new Weapon();
+        testWeapon = new Weapon(originalName, originalLevel, originalSlot, originalDamage, originalAttackSpeed, originalWeaponType);
     }
 
     @Test
     void getDPS_ValidValue_ShouldPass() {
-        int damage = 10;
-        double attackSpeed = 2.0;
         double expected = 20.0;
-
-        testWeapon.setDamage(damage);
-        testWeapon.setAttackSpeed(attackSpeed);
-
         double result = testWeapon.getDPS();
+
         Assertions.assertEquals(expected, result);
     }
 
     @Test
-    void setWeaponType() {
+    void getName_ValidValue_ShouldPass() {
+        String name = "Test Name";
+
     }
 }
