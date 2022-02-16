@@ -6,10 +6,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WeaponTest {
+    Weapon testWeapon;
 
     @BeforeEach
     void setUp() {
-
+        testWeapon = new Weapon();
     }
 
     @Test
