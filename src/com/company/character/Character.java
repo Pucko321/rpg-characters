@@ -97,6 +97,21 @@ public abstract class Character {
         return characterType;
     }
 
+    public int getBasePrimaryAttribute() {
+        switch(getPrimaryAttribute()) {
+            case STRENGTH:
+                return getStrength();
+            case DEXTERITY:
+                return getDexterity();
+            case INTELLIGENCE:
+                getIntelligence();
+            default:
+                return 0;
+        }
+    }
+
+
+
     // Setters
     public void setName(String name) {
         this.name = name;
