@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.Enum.PrimaryAttributeType;
+
 public class PrimaryAttribute {
     private int strength;
     private int dexterity;
@@ -45,6 +47,23 @@ public class PrimaryAttribute {
         setStrength(newStrength);
         setDexterity(newDexterity);
         setIntelligence(newIntelligence);
+    }
+
+    public int getPrimaryAttribute(PrimaryAttributeType primaryAttribute) {
+        switch (primaryAttribute) {
+            case STRENGTH -> {
+                return getStrength();
+            }
+            case DEXTERITY -> {
+                return getDexterity();
+            }
+            case INTELLIGENCE -> {
+                return getIntelligence();
+            }
+            default -> {
+                return 0;
+            }
+        }
     }
 
     // toString

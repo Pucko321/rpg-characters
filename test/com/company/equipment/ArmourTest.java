@@ -22,18 +22,18 @@ class ArmourTest {
     // Getters
     // Getter for name, level, and slot have been tested in WeaponTest
     @Test
-    void getAttributes() {
+    void getAttributes_ValidValue_ShouldPass() {
         PrimaryAttribute result = testArmour.getAttributes();
 
         Assertions.assertEquals(originalAttributes, result);
     }
 
     @Test
-    void getArmourType() {
+    void getArmourType_ValidValue_ShouldPass() {
         Armour.ArmourType result = testArmour.getArmourType();
 
         Assertions.assertEquals(originalArmourType, result);
     }
 
-    // Setters will be tested in CharacterEquipArmourTest
+    // Setters get tested in CharacterWithEquipmentTest
 }

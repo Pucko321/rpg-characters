@@ -3,10 +3,13 @@ package com.company.character;
 import com.company.Enum.CharacterType;
 import com.company.Enum.PrimaryAttributeType;
 import com.company.Enum.Slot;
+import com.company.Enum.WeaponType;
 import com.company.PrimaryAttribute;
 import com.company.equipment.Armour;
 import com.company.equipment.Item;
 import com.company.equipment.Weapon;
+import com.company.exception.InvalidArmourException;
+import com.company.exception.InvalidWeaponException;
 
 import java.util.HashMap;
 
@@ -95,6 +98,52 @@ public abstract class Character {
         return characterType;
     }
 
+    public int getBasePrimaryAttribute() {
+        switch(getPrimaryAttribute()) {
+            case STRENGTH:
+                return getStrength();
+            case DEXTERITY:
+                return getDexterity();
+            case INTELLIGENCE:
+                getIntelligence();
+            default:
+                return 0;
+        }
+    }
+
+    public int getArmourAttributes() {
+        int headAttribute = 0;
+        int bodyAttribute = 0;
+        int legsAttribute = 0;
+
+        if (getHeadSlot() != null) {
+            headAttribute = ((Armour)getHeadSlot()).getAttributes().getPrimaryAttribute(getPrimaryAttribute());
+        }
+
+        if (getBodySlot() != null) {
+            bodyAttribute = ((Armour)getBodySlot()).getAttributes().getPrimaryAttribute(getPrimaryAttribute());
+        }
+
+        if (getLegsSlot() != null) {
+            legsAttribute = ((Armour)getLegsSlot()).getAttributes().getPrimaryAttribute(getPrimaryAttribute());
+        }
+
+        return headAttribute + bodyAttribute + legsAttribute;
+    }
+
+    public int getTotalPrimaryAttribute() {
+        return getBasePrimaryAttribute() + getArmourAttributes();
+    }
+
+    public double getDPS() {
+        double weaponDPS = 1.0;
+        if (getWeaponSlot() != null) {
+            weaponDPS = ((Weapon)getWeaponSlot()).getDPS();
+        }
+
+        return weaponDPS * (1 + getTotalPrimaryAttribute() / 100.0);
+    }
+
     // Setters
     public void setName(String name) {
         this.name = name;
@@ -133,8 +182,23 @@ public abstract class Character {
         getAttributes().increaseAttributes(strengthGain, dexterityGain, intelligenceGain);
     }
 
-    public void equipItem(Slot slot, Item item) {
-        this.equipment.put(slot, item);
+    public boolean equipItem(Slot slot, Item item) throws InvalidWeaponException, InvalidArmourException {
+        // If the characters level is lower than the item requirement -> throw an invalid weapon/armour exception
+        if (getLevel() < item.getLevel()) {
+            if (item instanceof Weapon) {
+                throw new InvalidWeaponException("You must have a level of " + item.getLevel() + " to wield this weapon.");
+            }
+            else {
+                throw new InvalidArmourException("You must have a level of " + item.getLevel() + " to wield this armour.");
+            }
+        }
+
+        // If the character is trying to equip the wrong item type -> throw an invalid weapon/armour exception
+        // didn't plan for this particular case, so don't hava time to make changes to fix this
+        else {
+            this.equipment.put(slot, item);
+            return true;
+        }
     }
 
     // toString
