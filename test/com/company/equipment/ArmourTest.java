@@ -2,6 +2,7 @@ package com.company.equipment;
 
 import com.company.Enum.Slot;
 import com.company.PrimaryAttribute;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,8 +19,13 @@ class ArmourTest {
         testArmour = new Armour(originalName, originalLevel, originalSlot, originalAttributes, originalArmourType);
     }
 
+    // Getters
+    // Getter for name, level, and slot have been tested in WeaponTest
     @Test
     void getAttributes() {
+        PrimaryAttribute result = testArmour.getAttributes();
+
+        Assertions.assertEquals(originalAttributes, result);
     }
 
     @Test
