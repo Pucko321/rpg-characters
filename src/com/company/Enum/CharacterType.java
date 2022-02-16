@@ -3,7 +3,7 @@ package com.company.Enum;
 public enum CharacterType {
     MAGE(   1, 1, 8, 1, 1, 5, PrimaryAttributeType.INTELLIGENCE),
     RANGER( 1, 7, 1, 1, 5, 1, PrimaryAttributeType.DEXTERITY),
-    ROGUE(  2, 6, 1, 1, 1, 4, PrimaryAttributeType.DEXTERITY),
+    ROGUE(  2, 6, 1, 1, 4, 1, PrimaryAttributeType.DEXTERITY),
     WARRIOR(5, 2, 1, 3, 2, 1, PrimaryAttributeType.STRENGTH);
 
     final public int defaultStrength;
