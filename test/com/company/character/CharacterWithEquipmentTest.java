@@ -57,9 +57,8 @@ class CharacterWithEquipmentTest {
     @Test
     void toHighWeaponLevel_ValidValue_ShouldThrowInvalidWeaponException() {
         testWeapon.setLevel(2);
-        Exception exception = assertThrows(InvalidWeaponException.class, () -> {
-            testWarrior.equipItem(Slot.WEAPON, testWeapon);
-        });
+        Exception exception = assertThrows(InvalidWeaponException.class,
+                () -> testWarrior.equipItem(Slot.WEAPON, testWeapon));
 
         String expectedMessage = "You must have a level of 2 to wield this weapon.";
         String actualMessage = exception.getMessage();
@@ -70,9 +69,8 @@ class CharacterWithEquipmentTest {
     @Test
     void toHighArmourLevel_ValidValue_ShouldThrowInvalidWeaponException() {
         testPlateBody.setLevel(2);
-        InvalidArmourException exception = assertThrows(InvalidArmourException.class, () -> {
-            testWarrior.equipItem(Slot.WEAPON, testPlateBody);
-        });
+        InvalidArmourException exception = assertThrows(InvalidArmourException.class,
+                () -> testWarrior.equipItem(Slot.WEAPON, testPlateBody));
 
         String expectedMessage = "You must have a level of 2 to wield this armour.";
         String actualMessage = exception.getMessage();
